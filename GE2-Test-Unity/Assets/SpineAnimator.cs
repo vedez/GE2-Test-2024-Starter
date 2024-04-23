@@ -50,7 +50,7 @@ public class SpineAnimator : MonoBehaviour {
                 , Time.deltaTime * bondDamping);
 
             Quaternion wantedRotation = Quaternion.LookRotation(prevBone.transform.position
-                - bone.transform.position);
+                - bone.transform.position, prevBone.transform.up);
 
             bone.transform.rotation = Quaternion.Slerp(bone.transform.rotation
                 , wantedRotation
