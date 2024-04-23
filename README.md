@@ -10,7 +10,7 @@ Click for a video of the creature creation system you will create today:
 - Open exam_scene 
 - Modify creature_generator.gd
 - Add fields for length, frequency, start_angle, base_size, multiplier
-- Modify the code in _process in creature_genereator.gd to draw the gizmo as per the video showing where the parts will be generated as spheres. 
+- Modify the code in _process in creature_genereator.gd to draw the gizmo as per the video showing where the parts will be generated as cubes. 
 - You need to calculate the size of each cube and its position in world space. 
 - I suggest you draw a diagram and work this out on paper first. Use a sin wave function to determine the size. 
 - Frequency controls how often the sin wave will repeat in the length of the creature. Start angle is an offset to add. base_size is the smallest segment size and multiplier * base_size is the largest. You can use the remap function.
