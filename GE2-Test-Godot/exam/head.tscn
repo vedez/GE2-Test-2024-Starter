@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg6jnork52jk0"]
+
+[ext_resource type="Script" path="res://behaviors/Boid.gd" id="1_23ac1"]
+[ext_resource type="Script" path="res://behaviors/Harmonic.gd" id="2_rya2p"]
+[ext_resource type="Script" path="res://behaviors/NoiseWander.gd" id="3_jqr3u"]
+
+[node name="boid" type="Node3D"]
+script = ExtResource("1_23ac1")
+
+[node name="Node3D2" type="Node3D" parent="."]
+script = ExtResource("2_rya2p")
+
+[node name="Node3D3" type="Node3D" parent="."]
+script = ExtResource("3_jqr3u")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]

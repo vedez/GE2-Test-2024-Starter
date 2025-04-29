@@ -1,6 +1,5 @@
 @tool
-
-class_name Boid extends CharacterBody3D
+extends Node3D
 
 @export var mass = 1
 @export var force = Vector3.ZERO
@@ -15,7 +14,7 @@ var behaviors = []
 @export var damping = 0.1
 
 @export var draw_gizmos = true
-@export var pause = false
+@export var pause = true
 
 var count_neighbors = false
 var neighbors = [] 
@@ -78,9 +77,9 @@ func count_neighbors_simple():
 				break
 	return neighbors.size()
 
-func _input(event):
-	if event is InputEventKey and event.keycode == KEY_P and event.pressed:
-		pause = ! pause
+#func _input(event):
+#	if event is InputEventKey and event.keycode == KEY_P and event.pressed:
+#		pause = ! pause
 		
 func set_enabled(behavior, enabled):
 	behavior.enabled = enabled
@@ -191,9 +190,10 @@ func _physics_process(delta):
 				# Damping
 				vel -= vel * delta * damping
 				
-				set_velocity(vel)
-				move_and_slide()
-				
+				#set_velocity(vel)
+				#move_and_slide()
+				translate(vel * delta)
+
 				# Implement Banking as described:
 				# https://www.cs.toronto.edu/~dt/siggraph97-course/cwr87/
 				var temp_up = global_transform.basis.y.lerp(Vector3.UP + (acceleration * banking), delta * 5.0)
